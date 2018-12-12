@@ -7,7 +7,8 @@
   (slime-setup '(slime-fancy slime-banner))
   (add-to-list 'load-path "/usr/local/Cellar/chicken/4.13.0/lib/chicken/8")
   (autoload 'chicken-slime "chicken-slime" "SWANK backend for Chicken" t)
-  (setq swank-chicken-path "/Users/yanying/swank-chicken/swank-chicken.scm")
+  ;; TODO set dynamic path
+  (setq swank-chicken-path "/Users/zeke/swank-chicken/swank-chicken.scm")
   (setq slime-csi-path "/usr/local/bin/csi")
   (add-hook 'scheme-mode-hook (lambda () (slime-mode t)))
   :ensure t)
@@ -25,10 +26,10 @@
 
 
 
-;;(if (file-exists-p "/usr/bin/sbcl")
-;;    (setq inferior-lisp-program "/usr/bin/sbcl"))
-;;(if (file-exists-p "/usr/local/bin/sbcl")
-;;    (setq inferior-lisp-program "/usr/local/bin/sbcl"))
+(if (file-exists-p "/usr/bin/sbcl")
+    (setq inferior-lisp-program "/usr/bin/sbcl"))
+(if (file-exists-p "/usr/local/bin/sbcl")
+    (setq inferior-lisp-program "/usr/local/bin/sbcl"))
 ;;
 ;;
 ;;;;roswell slime
