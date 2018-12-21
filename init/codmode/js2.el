@@ -3,29 +3,28 @@
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-hook 'js-mode-hook 'js2-minor-mode)
   (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
   (add-hook 'js2-mode-hook (lambda ()
                              (setq js2-basic-offset 2)
-                             (setq js2-mode-assume-strict true)))
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode))
-  (eval-after-load 'js2-jsx-mode
-    '(progn
-       (add-hook 'web-mode-hook #'add-node-modules-path)
-       (add-hook 'web-mode-hook #'prettier-js-mode)))
+                             (setq js2-mode-assume-strict t)))
   :config
   :ensure t)
 
+;;; rjsx-mode extends the parser in js2-mode to support the full JSX syntax.
+(use-package rjsx-mode
+  :init
+  (add-to-list 'auto-mode-alist '("src\\/**\\/*\\/.*\\.js\\'" . rjsx-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+  :ensure t)
 
+(use-package prettier-js
+  :init
+  (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+  :ensure t)
 
 ;;; coffeescript mode
 (use-package coffee-mode
-  :ensure t)
-
-;;; rjsx-mode
-(use-package rjsx-mode
+  :init (custom-set-variables '(coffee-tab-width 2))
   :ensure t)
 
 ;;; skewer-mode is a minor-mode that allows Emacs to send JavaScript, CSS and HTML to an active browser window
@@ -37,5 +36,3 @@
   (setq httpd-port 8081)
   :config
   :ensure t)
-
-(custom-set-variables '(coffee-tab-width 2))
