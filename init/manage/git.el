@@ -4,8 +4,15 @@
   :ensure t)
 
 (use-package browse-at-remote
-  :bind (("C-c g g" . browse-at-remote))
+  :bind (("C-c o g" . browse-at-remote))
   :ensure t)
 
 (use-package github-stars
+  :ensure t)
+
+(use-package helm-open-github
+  :bind (("C-c o f" . helm-open-github-from-file)
+         ("C-c o c" . helm-open-github-from-commit)
+         ("C-c o i" . helm-open-github-from-issues)
+         ("C-c o p" . helm-open-github-from-pull-requests))
   :ensure t)
