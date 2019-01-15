@@ -36,3 +36,14 @@
   (setq httpd-port 8081)
   :config
   :ensure t)
+
+;;; typescript mode
+(use-package tide
+  :ensure t
+  :init
+  (setq tide-format-options '(:indentSize 2))
+  (setq typescript-indent-level 2)
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
