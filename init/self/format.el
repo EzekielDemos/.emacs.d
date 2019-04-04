@@ -16,7 +16,7 @@
 (setq require-final-newline 1)          ;Always end a file with a newline
 (setq next-line-add-newlines nil)       ;Stop emacs from arbitrarily adding lines to the end of a file when the cursor is moved past the end of it
 
-(setq-default line-spacing 4) ; set line spacing
+(setq-default line-spacing 0) ; set line spacing
 
 
 ;; prevent emacs from adding coding information in the first line

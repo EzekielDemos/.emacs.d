@@ -1,3 +1,13 @@
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  ;; company is an optional dependency. You have to
+  ;; install it separately via package-install
+  ;; `M-x package-install [ret] company`
+  (company-mode +1))
+
 (use-package js2-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -8,6 +18,9 @@
                              (setq js2-basic-offset 2)
                              (setq js2-mode-assume-strict t)))
   :config
+  (setq js2-strict-missing-semi-warning nil)
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil)
   :ensure t)
 
 ;;; rjsx-mode extends the parser in js2-mode to support the full JSX syntax.
@@ -15,6 +28,11 @@
   :init
   (add-to-list 'auto-mode-alist '("src\\/**\\/*\\/.*\\.js\\'" . rjsx-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+  (add-hook 'rjsx-mode-hook
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
   :ensure t)
 
 (use-package prettier-js
@@ -46,4 +64,4 @@
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (typescript-mode . prettier-js-mode)))
