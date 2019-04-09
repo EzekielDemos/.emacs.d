@@ -41,7 +41,7 @@
  '(css-indent-offset 2)
  '(custom-safe-themes
    (quote
-    ("adf5275cc3264f0a938d97ded007c82913906fc6cd64458eaae6853f6be287ce" "e27ba8895ec03fb6e76127c5827c6e4b94b7917bcd7bf4cffc2adf3efbd45ecb" "bcc1ca24b07b11381f7e15aa4f7936a3bb9afaa06422912ea4a893a47e93948a" default)))
+    ("2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" "aefbe9af100c08d659fd0658ac9722dca625fe5a82b23b09e1dedb3980eff965" "adf5275cc3264f0a938d97ded007c82913906fc6cd64458eaae6853f6be287ce" "e27ba8895ec03fb6e76127c5827c6e4b94b7917bcd7bf4cffc2adf3efbd45ecb" "bcc1ca24b07b11381f7e15aa4f7936a3bb9afaa06422912ea4a893a47e93948a" default)))
  '(fci-rule-color "#3E4451")
  '(package-selected-packages
    (quote
