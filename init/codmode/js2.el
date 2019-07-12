@@ -65,3 +65,5 @@
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (typescript-mode . prettier-js-mode)))
+
+(use-package js-doc)
