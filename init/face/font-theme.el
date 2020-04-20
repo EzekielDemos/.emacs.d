@@ -33,6 +33,10 @@
   :config
   :ensure t :defer)
 
+(use-package afternoon-theme
+  :config
+  :ensure t :defer)
+
 ;;
 ;;(use-package doom-themes
 ;;  :init
@@ -68,8 +72,8 @@
   (setq calendar-longitude 121.473702)
   ;; (setq circadian-themes '((:sunrise . gruvbox-dark-soft)
   ;;                          (:sunset  . gruvbox-dark-hard)))
-  (setq circadian-themes '((:sunrise . atom-one-dark)
-                           (:sunset  . atom-one-dark)))
+  (setq circadian-themes '((:sunrise . xj-sealing)
+                           (:sunset  . wombat)))
 
   (add-hook 'circadian-after-load-theme-hook (lambda ()
                                                (set-frame-font "monaco-12:normal" nil t)
