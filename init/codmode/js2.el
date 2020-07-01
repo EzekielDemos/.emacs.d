@@ -35,6 +35,13 @@
                 (setup-tide-mode))))
   :ensure t)
 
+;;; vue mode
+(use-package vue-mode
+  :ensure t
+  :mode "\\.vue\\'"
+  :hook (vue-mode . prettier-js-mode)
+  :hook (vue-mode . setup-tide-mode))
+
 (use-package prettier-js
   :init
   (add-hook 'rjsx-mode-hook 'prettier-js-mode)
