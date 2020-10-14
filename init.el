@@ -49,7 +49,7 @@
  '(indicate-buffer-boundaries (quote left))
  '(package-selected-packages
    (quote
-    (go-mode evil-magit doxymacs editorconfig edit-indirect tide helm-open-github ace-jump-mode dumb-jump switch-window browse-at-remote yaml-mode ws-butler web-mode use-package undo-tree smartparens slime slim-mode scss-mode rvm robe region-bindings-mode rainbow-delimiters projectile-rails pinyin-search phi-search paredit multiple-cursors micgoline markdown-mode magit js2-mode indent-guide helm-themes helm-projectile helm-descbinds haml-mode gruvbox-theme geiser expand-region exec-path-from-shell diff-hl company coffee-mode circadian chicken-scheme cal-china-x bing-dict auto-package-update aggressive-indent)))
+    (add-node-modules-path go-mode evil-magit doxymacs editorconfig edit-indirect tide helm-open-github ace-jump-mode dumb-jump switch-window browse-at-remote yaml-mode ws-butler web-mode use-package undo-tree smartparens slime slim-mode scss-mode rvm robe region-bindings-mode rainbow-delimiters projectile-rails pinyin-search phi-search paredit multiple-cursors micgoline markdown-mode magit js2-mode indent-guide helm-themes helm-projectile helm-descbinds haml-mode gruvbox-theme geiser expand-region exec-path-from-shell diff-hl company coffee-mode circadian chicken-scheme cal-china-x bing-dict auto-package-update aggressive-indent)))
  '(tetris-x-colors
    [[229 192 123]
     [97 175 239]

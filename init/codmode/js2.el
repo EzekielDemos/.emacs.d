@@ -73,4 +73,13 @@
          (typescript-mode . tide-hl-identifier-mode)
          (typescript-mode . prettier-js-mode)))
 
+
+;;; https://github.com/codesuki/add-node-modules-path
+(use-package add-node-modules-path
+  :ensure t)
+
+(eval-after-load 'js2-mode
+  '(progn
+     (add-hook 'js2-mode-hook #'add-node-modules-path)))
+
 ;; (use-package js-doc)
